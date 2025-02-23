@@ -14,52 +14,61 @@ Desktop.ini
 $RECYCLE.BIN/
 
 # Visual Studio Code
-.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
 .history/
-.vscode-test/
-.gradle/
+*.vsix
+node_modules/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
 
 # Visual Studio
-.vs/
-*.vcxproj.*
-*.user
-*.userprefs
+*.rsuser
 *.suo
+*.user
 *.userosscache
 *.sln.docstates
+*.userprefs
+mono_crash.*
+[Dd]ebug*/
+[Rr]elease*/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+.vs/
+.vscode/
+*.nupkg
+.nuget/packages/
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+Generated\ Files/
+*.bak
+*.backup
+*.log
+*.tmp
+_ReSharper*/
+*.[Rr]e[Ss]harper
 
 # Python
 __pycache__/
 *.py[cod]
 *$py.class
-*.manifest
-*.spec
-
-# Node.js
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# React
-.vscode-react/
-.vscode-react-snippets/
-.vscode-react-devtools/
-
-# Vite
-.vite/
-
-# Build results
-bin/
-obj/
-dist/
-Debug/
-Release/
-build/
-out/
+*.so
 .Python
+build/
 develop-eggs/
+dist/
 downloads/
 eggs/
 .eggs/
@@ -68,77 +77,20 @@ lib64/
 parts/
 sdist/
 var/
+wheels/
+pip-wheel-metadata/
 *.egg-info/
 .installed.cfg
 *.egg
-*.whl
-*.apk
-*.aab
-*.unitypackage
-*.app
-*.ipa
-
-# Log files
-*.log
-logs/
-*.log.*
-
-# Temporary files
-*.tmp
-*.temp
-*.cache
-*.swp
-*.swo
-*.bak
-*.ori
-*.original
-*.rej
-*.old
-*.pdb
-
-# Environmental variables
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-.env.local
-.env.*.local
-
-# DotNet
-project.lock.json
-project.fragment.lock.json
-artifacts/
-
-# IDEs and editors
-.idea/
-*.sln.iml
-*.sublime-project
-*.sublime-workspace
-
-# Dependencies
-*.nuget/
-*.nupkg
-*.snupkg
-packages/
-
-# Resharper
-_ReSharper*/
-*.DotSettings.user
-
-# Test results
-TestResults/
-*.trx
-*.coverage
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
 htmlcov/
-*.lcov
 .tox/
 .nox/
 .coverage
 .coverage.*
-coverage/
 .cache
 nosetests.xml
 coverage.xml
@@ -146,43 +98,25 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
-
-# Unity
-# /[Ll]ibrary/
-# /[Tt]emp/
-# /[Oo]bj/
-# /[Bb]uild/
-# /[Bb]uilds/
-# /[Ll]ogs/
-# /[Uu]ser[Ss]ettings/
-# /[Mm]emoryCaptures/
-# /[Rr]ecordings/
-# /[Aa]ssets/Plugins/Editor/JetBrains*
-# /[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
-# /[Aa]ssets/[Ss]treamingAssets/aa.meta
-# /[Aa]ssets/[Ss]treamingAssets/aa/*
-# ExportedObj/
-# Packages/manifest.json
-# Packages/packages-lock.json
-# .consulo/
-# *.csproj
-# *.unityproj
-# *.sln
-# *.pidb
-# *.booproj
-# *.svd
-# *.mdb
-# *.opendb
-# *.VC.db
-# *.pidb.meta
-# *.pdb.meta
-# *.mdb.meta
-# sysinfo.txt
-# crashlytics-build.properties
-# sys_crashreports
-# *.blend1
-# *.blend2
-# *.backup
-# *.diff
-# *.patch
-# *.orig
+*.mo
+*.pot
+*.log
+local_settings.py
+db.sqlite3
+instance/
+.webassets-cache
+.scrapy
+docs/_build/
+target/
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+.python-version
+celerybeat-schedule
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
