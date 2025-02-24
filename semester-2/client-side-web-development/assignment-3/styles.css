@@ -1,0 +1,78 @@
+html {
+    box-sizing: border-box;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+section {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    overflow: hidden;
+}
+
+h1 {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.line-group {
+    padding: 20px 10px;
+    
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+}
+
+.line-subgroup {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    flex: 1 1 auto;
+    gap: 10px;
+}
+
+input,
+select {
+    flex: 1 1 auto;
+}
+
+input[type="checkbox"],
+input[type="radio"],
+.ignore-stretch {
+    flex: 0 1 auto;
+}
+
+p {
+    white-space: nowrap;
+}
+
+#work-eligibility-div, #prev-employer-div, #felony-div {
+    display: none;
+}
+
+#text-center {
+    text-align: center;
+}
+
+button {
+    background-color: rgb(52, 152, 219);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(41, 128, 185);
+}

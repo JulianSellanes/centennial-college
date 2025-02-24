@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>(Julian) Job Application</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <form onsubmit="return validateForm()">
+            <section>
+                <h1>EMPLOYMENT / JOB APPLICATION</h1>
+
+                <div class="line-group">
+                    <div class="line-subgroup">
+                        <p>Full Name:</p>
+                        <input type="text" required>
+                    </div>
+                    
+                    <div class="line-subgroup">
+                        <p>Date:</p>
+                        <input type="date" required>
+                    </div>
+                </div>
+
+                <div class="line-group">
+                    <div class="line-subgroup">
+                        <p>Address:</p>
+                        <input type="text" required>
+                    </div>
+                </div>
+
+                <div class="line-group">
+                    <div class="line-subgroup">
+                        <p>City:</p>
+                        <input type="text" required>
+                    </div>
+                    
+                    <div class="line-subgroup">
+                        <p>State:</p>
+                        <input type="text" required>
+                    </div>
+
+                    <div class="line-subgroup">
+                        <p>Zip Code:</p>
+                        <input type="text" required>
+                    </div>
+                </div>
+
+                <div class="line-group">
+                    <div class="line-subgroup">
+                        <p>E-Mail:</p>
+                        <input type="email" placeholder="test.example@gmail.com" required>
+                    </div>
+                    
+                    <div class="line-subgroup">
+                        <p>Phone:</p>
+                        <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+                    </div>
+                </div>
+
+                <div class="line-group">
+                    <div class="line-subgroup">
+                        <p>Social Security Number (SSN):</p>
+                        <input type="text">
+                    </div>
+                </div>
+
+                <div class="line-group">
+                    <div class="line-subgroup">
+                        <p>Date Available:</p>
+                        <input type="date" required>
+                    </div>
+
+                    <div class="line-subgroup">
+                        <p>Desired Pay: $</p>
+                        <input type="number">
+                    </div>
+                </div>
+
+                <div class="line-group">
+                    <div class="line-subgroup">
+                        <p>Position Applied For:</p>
+                        <input type="text" required>
+                    </div>
+                </div>
+
+                <div class="line-group">
+                    <div class="line-subgroup ignore-stretch">
+                        <p>Employment Desired:</p>
+                    </div>
+                    <div class="line-subgroup ignore-stretch">
+                        <input type="checkbox">
+                        <p>Full-Time</p>
+                    </div>
+                    <div class="line-subgroup ignore-stretch">
+                        <input type="checkbox">
+                        <p>Part-Time</p>
+                    </div>
+                    <div class="line-subgroup ignore-stretch">
+                        <input type="checkbox">
+                        <p>Seasonal</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h1>EMPLOYMENT ELIGIBILITY</h1>
+
+                <div class="line-group">
+                    <div class="line-subgroup ignore-stretch">
+                        <p>Are you a US citizen?</p>
+                    </div>
+                    <div class="line-subgroup ignore-stretch">
+                        <input type="radio" name="us-citizen-radio" value="yes" required>
+                        <p>Yes</p>
+                    </div>
+                    <div class="line-subgroup ignore-stretch">
+                        <input type="radio" name="us-citizen-radio" value="no">
+                        <p>No</p>
+                    </div>
+                </div>
+
+                <div class="line-group" id="work-eligibility-div">
+                    <div class="line-subgroup ignore-stretch">
+                        <p>*If NO, are you allowed to work in the US?</p>
+                    </div>
+                    <div class="line-subgroup ignore-stretch">
+                        <input type="radio" name="work-eligibility-radio" value="yes" required>
+                        <p>Yes</p>
+                    </div>
+                    <div class="line-subgroup ignore-stretch">
+                        <input type="radio" name="work-eligibility-radio" value="no">
+                        <p>No</p>
+                    </div>
+                </div>
+
+                <div class="line-group">
+                    <div class="line-subgroup ignore-stretch">
+                        <p>Have you ever worked for this employer?</p>
+                    </div>
+                    <div class="line-subgroup ignore-stretch">
+                        <input type="radio" name="prev-employer-radio" value="yes" required>
+                        <p>Yes</p>
+                    </div>
+                    <div class="line-subgroup ignore-stretch">
+                        <input type="radio" name="prev-employer-radio" value="no">
+                        <p>No</p>
+                    </div>
+                </div>
+
+                <div class="line-group" id="prev-employer-div">
+                    <div class="line-subgroup ignore-stretch">
+                        <p>*If YES, write the start and end dates:</p>
+                    </div>
+                    <div class="line-subgroup ignore-stretch">
+                        <input type="date" id="prev-employer-date" required>
+                    </div>
+                </div>
+                
+                <div class="line-group">
+                    <div class="line-subgroup ignore-stretch">
+                        <p>Have you ever been convicted of a felony?</p>
+                    </div>
+                    <div class="line-subgroup ignore-stretch">
+                        <input type="radio" name="felony-radio" value="yes" required>
+                        <p>Yes</p>
+                    </div>
+                    <div class="line-subgroup ignore-stretch">
+                        <input type="radio" name="felony-radio" value="no">
+                        <p>No</p>
+                    </div>
+                </div>
+
+                <div class="line-group" id="felony-div">
+                    <div class="line-subgroup ignore-stretch">
+                        <p>*If YES, please explain:</p>
+                    </div>
+                    <div class="line-subgroup ignore-stretch">
+                        <input type="text" id="felony-text" required>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h1>EDUCATION</h1>
+
+                <div class="line-group">
+                    <div class="line-subgroup">
+                        <p>High School:</p>
+                        <select required>
+                            <option>Select High School</option>
+                            <option>Upper Canada College</option>
+                            <option>Northern Secondary School</option>
+                            <option>Waterloo Collegiate Institute</option>
+                            <option>Colonel By Secondary School</option>
+                            <option>St. Michaels College School</option>
+                        </select>
+                    </div>
+
+                    <div class="line-subgroup">
+                        <p>City/State:</p>
+                        <input type="text" required>
+                    </div>
+                </div>
+
+                <div class="line-group">
+                    <div class="line-subgroup">
+                        <p>From:</p>
+                        <input type="text" required>
+                    </div>
+
+                    <div class="line-subgroup">
+                        <p>To:</p>
+                        <input type="text" required>
+                    </div>
+                </div>
+
+                <div class="line-group">
+                    <div class="line-subgroup ignore-stretch">
+                        <p>Graduate?</p>
+                    </div>
+                    <div class="line-subgroup ignore-stretch">
+                        <input type="radio" name="highschool-radio" value="yes" required>
+                        <p>Yes</p>
+                    </div>
+                    <div class="line-subgroup ignore-stretch">
+                        <input type="radio" name="highschool-radio" value="no">
+                        <p>No</p>
+                    </div>
+                    <div class="line-subgroup">
+                        <p>Diploma:</p>
+                        <input type="text" required>
+                    </div>
+                </div>
+
+                <div class="line-group">
+                    <div class="line-subgroup">
+                        <p>College:</p>
+                        <select required>
+                            <option>Select College</option>
+                            <option>Centennial College</option>
+                            <option>Humber College</option>
+                            <option>Seneca College</option>
+                            <option>Fanshawe College</option>
+                            <option>Conestoga College</option>
+                        </select>
+                    </div>
+
+                    <div class="line-subgroup">
+                        <p>City/State:</p>
+                        <input type="text" required>
+                    </div>
+                </div>
+
+                <div class="line-group">
+                    <div class="line-subgroup">
+                        <p>From:</p>
+                        <input type="text" required>
+                    </div>
+
+                    <div class="line-subgroup">
+                        <p>To:</p>
+                        <input type="text" required>
+                    </div>
+                </div>
+
+                <div class="line-group">
+                    <div class="line-subgroup ignore-stretch">
+                        <p>Graduate?</p>
+                    </div>
+                    <div class="line-subgroup ignore-stretch">
+                        <input type="radio" name="college-radio" value="yes" required>
+                        <p>Yes</p>
+                    </div>
+                    <div class="line-subgroup ignore-stretch">
+                        <input type="radio" name="college-radio" value="no">
+                        <p>No</p>
+                    </div>
+                    <div class="line-subgroup">
+                        <p>Degree:</p>
+                        <input type="text" required>
+                    </div>
+                </div>
+            </section>
+
+            <section id="text-center">
+                <button type="submit">Submit</button>
+            </section>
+        </form>
+
+        <section id="text-center">
+            <small><i>Copyright &copy; Julián Sellanes (301494667) | Client-Side Web Dev - Winter 2025 | Assignment 3</i></small>
+        </section>
+
+        <script src="./main.js"></script>
+    </body>
+</html>
