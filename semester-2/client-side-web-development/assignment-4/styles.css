@@ -1,0 +1,103 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overscroll-behavior: none;
+}
+
+:root {
+    --white: white;
+    --black: black;
+    --grey: rgb(111, 111, 111);
+    --bg: rgb(244, 244, 244);
+    --accent: #007bff;
+    --accent-light: #2f94ff;
+    --accent-dark: #006bdd;
+}
+
+html {
+    box-sizing: inherit;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    background-color: var(--bg);
+    color: var(--black);
+}
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.dropzone {
+    background-color: var(--white);
+
+    width: 20%;
+    min-width: 30rem;
+    min-height: 30rem;
+    padding: 2rem;
+    margin: 1rem 0;
+
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropzone.drop {
+    border: 5px dashed var(--grey);
+}
+
+.dropzone.drop div{
+    pointer-events: none;
+}
+
+h3 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.task {
+    background-color: var(--accent);
+
+    margin: 2rem;
+    padding: 2rem;
+
+    color: white;
+    font-size: 2rem;
+    border-radius: 1rem;
+    cursor: grab;
+
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.task:hover {
+    background-color: var(--accent-dark);
+}
+
+.task:active {
+    cursor: grabbing;
+}
+
+.task.dragging {
+    background-color: var(--accent-light);
+    opacity: 0.5;
+    transform: scale(0.8);
+}
+
+section {
+    background-color: var(--white);
+
+    width: 70%;
+    padding: 2rem;
+    margin: 2rem auto;
+
+    border-radius: 1rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    font-size: 2rem;
+    text-align: center;
+}
