@@ -1,0 +1,72 @@
+<!-- Julián Sellanes 301494667 -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>(Julian) Form with API</title>
+        <meta name="description" content="">
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <main>
+            <h1>Canadian Tech Event Registration</h1>
+            <form id="form" novalidate>
+                <section>
+                    <label>Full Name</label>
+                    <input type="text" id="fullName" required>
+                    <label class="error"></label>
+                </section>
+                <section>
+                    <label>Email</label>
+                    <input type="email" id="email" required>
+                    <label class="error"></label>
+                </section>
+                <section>
+                    <label>Phone Number</label>
+                    <input type="text" id="phone" placeholder="(123) 456-7890" required>
+                    <label class="error"></label>
+                </section>
+                <section>
+                    <label>Postal Code</label>
+                    <input type="text" id="postal" placeholder="A1A 1A1" required>
+                    <label class="error"></label>
+                </section>
+                <section>
+                    <label>Workshop Topic</label>
+                    <select id="topic" required>
+                        <option value="">Select a topic</option>
+                        <option value="webdev">Web Dev</option>
+                        <option value="data">Data Science</option>
+                        <option value="cyber">Cybersecurity</option>
+                        <option value="coffee">Coffee Making</option>
+                    </select>
+                    <label class="error"></label>
+                </section>
+                <div>
+                    <fieldset>
+                        <legend>Experience Level</legend>
+                        <label><input type="radio" name="experience" value="Beginner" required> Beginner</label>
+                        <label><input type="radio" name="experience" value="Intermediate"> Intermediate</label>
+                        <label><input type="radio" name="experience" value="Advanced"> Advanced</label>
+                    </fieldset>
+                    <label class="error"></label>
+                </div>
+                <section class="comment-cont">
+                    <label>Comments</label>
+                    <textarea id="comments"></textarea>
+                </section>
+                <button type="submit">Register</button>
+                <div id="success-msg"></div>
+            </form>
+        </main>
+
+        <footer>
+            <small><i>Copyright &copy; Julián Sellanes (301494667) | Client-Side Web Dev - Winter 2025 | Assignment 5</i></small>
+        </footer>
+
+        <script src="./main.js"></script>
+    </body>
+</html>

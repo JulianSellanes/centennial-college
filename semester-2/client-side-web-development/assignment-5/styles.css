@@ -1,0 +1,361 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overscroll-behavior: none;
+    text-decoration: none;
+    list-style: none;
+    line-height: 1.5;
+}
+
+:root {
+    --white: white;
+    --black: black;
+    --grey: rgb(111, 111, 111);
+    --bg: rgb(244, 244, 244);
+    --accent: #007bff;
+    --accent-light: #2f94ff;
+    --accent-dark: #006bdd;
+}
+
+html {
+    box-sizing: inherit;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    background-color: var(--bg);
+    color: var(--black);
+}
+
+/* Phones */
+
+main {
+    background-color: var(--white);
+
+    padding: 1rem;
+
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+h1 {
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+
+    font-size: 2rem;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 2rem;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+
+
+
+#success-msg {
+    margin-top: 1rem;
+
+    color: green;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+label {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: right;
+}
+
+
+
+
+
+input,
+select,
+textarea {
+    padding: 0.3rem;
+
+    font-size: 1.5rem;
+    outline: none;
+    border: 1px solid var(--grey);
+    border-radius: 3px;
+
+    transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+input:not(fieldset input),
+select {
+    width: 15rem;
+}
+
+select {
+    cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
+    min-width: 27rem;
+    min-height: 20rem;
+}
+
+
+input:hover,
+input:focus,
+select:hover,
+select:focus,
+textarea:focus,
+textarea:hover {
+    box-shadow: 0 0 6px var(--accent);
+    border-color: var(--accent);
+}
+
+input.invalid,
+select.invalid {
+    border-color: red;
+}
+
+input.invalid:hover,
+input.invalid:focus,
+select.invalid:hover,
+select.invalid:focus {
+    box-shadow: 0 0 6px red;
+}
+
+
+
+
+
+.error {
+    display: none;
+
+    color: red;
+    text-align: center;
+}
+
+.error:not(fieldset label) {
+    grid-column: span 2;
+    grid-row: 2;
+}
+
+
+
+
+
+
+fieldset {
+    min-width: 20rem;
+    padding: 2rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+}
+
+fieldset label {
+    text-align: left;
+}
+
+legend {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+input[type="radio"] {
+    position: relative;
+
+    width: 1.2rem;
+    height: 1.2rem;
+
+    appearance: none;
+    border-radius: 50%;
+    border: 1px solid var(--grey);
+    cursor: pointer;
+
+    transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+input[type="radio"]:hover,
+input[type="radio"]:focus {
+    box-shadow: 0 0 6px var(--accent);
+    border-color: var(--accent);
+}
+
+input[type="radio"]:checked {
+    border-color: var(--accent);
+}
+
+input[type="radio"]:checked::before {
+    content: '';
+
+    position: absolute;
+    width: 0.7rem;
+    height: 0.7rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    background-color: var(--accent);
+    border-radius: 50%;
+}
+
+input[type="radio"].invalid {
+    border-color: red;
+}
+
+input[type="radio"].invalid:hover,
+input[type="radio"].invalid:focus {
+    box-shadow: 0 0 6px red;
+}
+
+
+
+
+
+.comment-cont {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+}
+
+
+
+
+button {
+    padding: 1rem 2rem;
+
+    background-color: var(--accent);
+    color: var(--white);
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: var(--accent-light);
+}
+
+button:active {
+    background-color: var(--accent-dark);
+}
+
+
+
+footer {
+    padding: 1rem;
+    margin: 1rem 0;
+
+    background-color: var(--white);
+    border-radius: 1rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    font-size: 1rem;
+    text-align: center;
+}
+
+
+
+/* Small tablets */
+
+@media screen and (min-width: 480px) {
+    main {
+        margin: 1rem;
+    }
+
+    h1 {
+        padding: 2rem 0;
+        font-size: 2rem;
+    }
+    
+    form {
+        gap: 3rem;
+    }
+
+    footer {
+        margin: 1rem;
+    }
+}
+
+/* Large screens */
+
+@media screen and (min-width: 768px) {
+    main {
+        width: 100vw;
+        max-width: 760px;
+        margin: 2rem auto;
+    }
+
+    h1 {
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+    
+        font-size: 3rem;
+    }
+
+    section {
+        grid-template-columns: 20rem 1fr;
+        gap: 2rem;
+    }
+    
+    label,
+    legend {
+        font-size: 2rem;
+    }
+
+    input:not(fieldset input),
+    select {
+        width: 20rem;
+    }
+    
+    textarea {
+        min-width: 40rem;
+    }
+
+    fieldset {
+        min-width: 30rem;
+    }
+
+    input[type="radio"] {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    input[type="radio"]:checked::before {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    button {
+        padding: 1.5rem 2.5rem;
+        
+        font-size: 2rem;
+    }
+
+    #success-msg {
+        font-size: 2.5rem;
+    }
+
+    footer {
+        width: 100vw;
+        max-width: 760px;
+        padding: 2rem;
+        margin: 2rem auto;
+
+        font-size: 1.5rem;
+    }
+}
