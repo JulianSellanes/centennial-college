@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="PMSManager.UserControls.ListEditAllTransactionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PMSManager.UserControls"
+             xmlns:viewModel="clr-namespace:PMSManager.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="350"
+             d:DesignWidth="600"
+             FontSize="16">
+    <UserControl.DataContext>
+    <viewModel:ListEditAllTransactionsViewModel/>
+</UserControl.DataContext>
+    <UserControl.Resources>
+        <DataTemplate x:Key="myEmployeeTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Path=Id}" />
+                <TextBlock Text=" " />
+                <TextBlock Text="{Binding Path=Fname}" />
+                <TextBlock Text=" "/>
+                <TextBlock Text="{Binding Path=Lname}"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="myTransactionTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Path=Name}" />
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="127*" />
+            <ColumnDefinition Width="473*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="6*" />
+        </Grid.RowDefinitions>
+        <Label Content="SalesPerson: " HorizontalAlignment="Center" VerticalAlignment="Center" Height="32" Width="100" />
+        <ComboBox Grid.Column="1"
+              ItemTemplate="{StaticResource myEmployeeTemplate}"
+              Margin="5,5,96,5"
+              ItemsSource="{Binding Salespersons}"
+              SelectedItem="{Binding SelectedSalesperson, Mode=TwoWay}" />
+        <DataGrid   Grid.Row="1"
+                Grid.ColumnSpan="2"
+                Margin="5,5,5,5"
+                ItemTemplate="{StaticResource myTransactionTemplate}"
+                AutoGenerateColumns="False"
+                AlternatingRowBackground="LightBlue"
+                IsReadOnly="True"
+                ItemsSource="{Binding Transactions}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Code}"
+                                Header="Product Id"
+                                Width="Auto"
+                                IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding ProductName}"
+                                Header="Product Name"
+                                Width="Auto" />
+                <DataGridTextColumn Binding="{Binding Amount}"
+                                Header="Amount"
+                                Width="*" />
+                <DataGridTextColumn Binding="{Binding  TransactionDate}"
+                                Header="Sold time"
+                                Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

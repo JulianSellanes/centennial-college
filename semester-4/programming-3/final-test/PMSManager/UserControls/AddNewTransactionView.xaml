@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="PMSManager.UserControls.AddNewTransactionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PMSManager.UserControls"
+             xmlns:viewModel="clr-namespace:PMSManager.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="350"
+             d:DesignWidth="600" 
+             FontSize="16">
+    <UserControl.DataContext>
+        <viewModel:AddNewTransactionViewModel/>
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <DataTemplate x:Key="employeeTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Path=Id}" />
+                <TextBlock Text=" " />
+                <TextBlock Text="{Binding Path=Fname}" />
+                <TextBlock Text=" "/>
+                <TextBlock Text="{Binding Path=Lname}"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="productTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Path=Code}" />
+                <TextBlock Text=" " />
+                <TextBlock Text="{Binding Path=Name}" />
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid  Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Content="Salesperson"
+               Margin="15,5"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center" />
+            <Label Content="Product"
+               Grid.Row="1"
+               Margin="15,5"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center" />
+            <Label Content="Amount"
+               Grid.Row="2"
+               Margin="15,5"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center" />
+            <Label Content="Transaction Date"
+               Grid.Row="3"
+               Margin="15,5"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center" />
+            <ComboBox Grid.Column="1"
+                  ItemTemplate="{StaticResource employeeTemplate}"
+                  Margin="5,5,20,5"
+                  ItemsSource="{Binding Salespersons}"
+                  SelectedItem="{Binding SelectedSalesperson, Mode=TwoWay}" />
+
+            <ComboBox Grid.Column="1"
+                  ItemTemplate="{StaticResource  productTemplate}"
+                  Grid.Row="1"
+                  Margin="5,5,20,5"
+                  ItemsSource="{Binding Products}"
+                  SelectedItem="{Binding SelectedProduct, Mode=TwoWay}" />
+            <TextBox Grid.Column="1"
+                 Grid.Row="2"
+                 Text="{Binding Amount}"
+                 Margin="5,5,20,5"
+                 TextWrapping="Wrap" />
+            <DatePicker Grid.Row="3"
+                    Grid.Column="1"
+                    SelectedDate="{Binding TransactionDate}"
+                    Margin="5,5,20,5"
+                    DisplayDate="4/17/2024"
+                    DisplayDateStart="1/1/2024"
+                    DisplayDateEnd="4/17/2024"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Content="Save"
+                Margin="60,5"
+                Background="CornflowerBlue"
+                Foreground="Yellow"
+                Command="{Binding AddNewItemCommand}" />
+            <Button Content="Cancel"
+                Grid.Column="1"
+                Margin="60,5"
+                Background="CornflowerBlue"
+                Foreground="Yellow"
+                Command="{Binding CancelCommand}" />
+        </Grid>
+    </Grid>
+</UserControl>
